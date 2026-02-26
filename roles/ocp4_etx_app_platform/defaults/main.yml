@@ -288,7 +288,7 @@ ocp4_etx_app_platform_rhdh_psql_password: password
 ocp4_etx_app_platform_developer_hub_namespace: rhdh
 ocp4_etx_app_platform_developer_hub_config_git_host: github.com
 ocp4_etx_app_platform_developer_hub_config_git_group: redhat-ads-tech
-ocp4_etx_app_platform_developer_hub_config_git_repo: ocp-app-platform-rhdh-config
+ocp4_etx_app_platform_developer_hub_config_git_repo: ocp-app-platform-demo-developer-hub-config
 ocp4_etx_app_platform_developer_hub_config_git_revision: main
 
 # ------------------------------------------------
