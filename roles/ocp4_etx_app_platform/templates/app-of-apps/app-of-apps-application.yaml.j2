@@ -145,6 +145,10 @@ spec:
               host: {{ ocp4_etx_app_platform_rhdh_gitops_name }}-server-{{ ocp4_etx_app_platform_rhdh_gitops_namespace }}.{{ r_openshift_subdomain }}
             kubernetes:
               apiUrl: {{ r_openshift_api_server }}
+            keycloak:
+              host: {{ ocp4_etx_app_platform_rhbk_host }}.{{ r_openshift_subdomain }}
+              realm: {{ ocp4_etx_app_platform_rhbk_realm_backstage_name }}
+              loginRealm: {{ ocp4_etx_app_platform_rhbk_realm_backstage_name }}
           application:
             git:
               host: {{ ocp4_etx_app_platform_developer_hub_config_git_host }}
