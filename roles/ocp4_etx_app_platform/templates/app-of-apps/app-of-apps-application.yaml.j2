@@ -133,6 +133,25 @@ spec:
           organizations: {{ ocp4_etx_app_platform_quay_organizations }}
           users: {{ ocp4_etx_app_platform_quay_users | to_json }}
 
+        developerHub:
+          name: developer-hub
+          namespace: {{ ocp4_etx_app_platform_developer_hub_namespace }}
+          config:
+            backstage:
+              host: backstage-{{ ocp4_etx_app_platform_developer_hub_namespace }}.{{ r_openshift_subdomain }}
+            gitlab:
+              host: {{ ocp4_etx_app_platform_gitlab_config_host }}
+            argocd:
+              host: {{ ocp4_etx_app_platform_rhdh_gitops_name }}-server-{{ ocp4_etx_app_platform_rhdh_gitops_namespace }}.{{ r_openshift_subdomain }}
+            kubernetes:
+              apiUrl: {{ r_openshift_api_server }}
+          application:
+            git:
+              host: {{ ocp4_etx_app_platform_developer_hub_config_git_host }}
+              group: {{ ocp4_etx_app_platform_developer_hub_config_git_group }}
+              repo: {{ ocp4_etx_app_platform_developer_hub_config_git_repo }}
+              revision: {{ ocp4_etx_app_platform_developer_hub_config_git_revision }}
+
         rhdhGitops:
           name: {{ ocp4_etx_app_platform_rhdh_gitops_name }}
           namespace: {{ ocp4_etx_app_platform_rhdh_gitops_namespace }}
