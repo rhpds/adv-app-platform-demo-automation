@@ -220,10 +220,6 @@ ocp4_etx_app_platform_rhbk_client_backstage_plugin_secret:
 
 ocp4_etx_app_platform_rhbk_user_password: "{{ common_password }}"
 
-ocp4_etx_app_platform_rhbk_client_tpa_cli_secret:
-  "{{ lookup('ansible.builtin.password', '/tmp/passwordfile-client-tpa-cli', chars=['ascii_letters', 'digits'], length=32) }}"
-
-
 # ------------------------------------------------
 # Quay
 # ------------------------------------------------
@@ -332,14 +328,3 @@ ocp4_etx_app_platform_rhtas_oidc_issuer:
   "{{ ocp4_etx_app_platform_rhbk_host }}.{{ r_openshift_subdomain }}/realms/{{ ocp4_etx_app_platform_rhbk_realm_backstage_name }}" # yamllint disable-line rule:line-length
 ocp4_etx_app_platform_rhtas_root_cert_email: admin@rhdemo.com
 ocp4_etx_app_platform_rhtas_root_cert_org: Parasol
-
-# ------------------------------------------------
-# Red Hat Trusted Profile Analyzer
-# ------------------------------------------------
-
-ocp4_etx_app_platform_tpa_application_name: trusted-profile-analyzer
-ocp4_etx_app_platform_tpa_namespace: trusted-profile-analyzer
-ocp4_etx_app_platform_tpa_s3_region: "https://s3-{{ ocp4_etx_app_platform_noobaa_namespace }}.{{ r_openshift_subdomain }}:443"
-ocp4_etx_app_platform_tpa_appDomain: "-{{ ocp4_etx_app_platform_tpa_namespace }}.{{ r_openshift_subdomain }}"
-ocp4_etx_app_platform_tpa_oidc_issuer:
-  "https://{{ ocp4_etx_app_platform_rhbk_host }}.{{ r_openshift_subdomain }}/realms/{{ ocp4_etx_app_platform_rhbk_realm_backstage_name }}" # yamllint disable-line rule:line-length

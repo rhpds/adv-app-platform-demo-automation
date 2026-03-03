@@ -121,9 +121,6 @@ spec:
               name: {{ ocp4_etx_app_platform_rhbk_client_openshift_name }}
               redirectUri: "https://oauth-openshift.{{ r_openshift_subdomain }}/oauth2callback/developers"
               secret: "{{ ocp4_etx_app_platform_rhbk_client_openshift_secret }}"
-            tpaCli:
-              name: tpa-cli
-              secret: "{{ ocp4_etx_app_platform_rhbk_client_tpa_cli_secret }}"
           users:
             password: "{{ ocp4_etx_app_platform_rhbk_user_password }}"
 
@@ -210,14 +207,6 @@ spec:
           rootCert:
             email: {{ ocp4_etx_app_platform_rhtas_root_cert_email }}
             org: {{ ocp4_etx_app_platform_rhtas_root_cert_org }}
-
-        tpa: 
-          name: {{ ocp4_etx_app_platform_tpa_application_name }}
-          namespace: {{ ocp4_etx_app_platform_tpa_namespace }}
-          s3:
-            region: {{ ocp4_etx_app_platform_tpa_s3_region }}
-          appDomain: {{ ocp4_etx_app_platform_tpa_appDomain }}
-          oidcIssuer: {{ ocp4_etx_app_platform_tpa_oidc_issuer }}
 
         amqStreams:
           enabled: true
