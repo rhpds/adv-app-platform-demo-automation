@@ -228,6 +228,15 @@ spec:
           gitlab:
             url: https://{{ ocp4_etx_app_platform_gitlab_config_host }}
 
+        tpa:
+          enabled: true
+          name: {{ ocp4_etx_app_platform_tpa_application_name }}
+          namespace: {{ ocp4_etx_app_platform_tpa_namespace }}
+          appDomain: {{ ocp4_etx_app_platform_tpa_appDomain }}
+          oidcIssuer: {{ ocp4_etx_app_platform_tpa_oidc_issuer }}
+          s3:
+            region: {{ ocp4_etx_app_platform_tpa_s3_region }}
+
         acs:
           enabled: true
           name: {{ ocp4_etx_app_platform_acs_application_name }}
