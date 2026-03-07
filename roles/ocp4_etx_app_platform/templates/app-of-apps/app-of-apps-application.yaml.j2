@@ -68,6 +68,9 @@ spec:
               apiKey: "{{ ocp4_etx_app_platform_litellm_api_key }}"
             kafka:
               userPassword: "{{ common_password }}"
+            tpa:
+              cliClientSecret: "{{ ocp4_etx_app_platform_rhbk_client_tpacli_secret }}"
+
 
         externalSecrets:
           name: external-secrets
@@ -121,6 +124,8 @@ spec:
               name: {{ ocp4_etx_app_platform_rhbk_client_openshift_name }}
               redirectUri: "https://oauth-openshift.{{ r_openshift_subdomain }}/oauth2callback/developers"
               secret: "{{ ocp4_etx_app_platform_rhbk_client_openshift_secret }}"
+            tpaCli:
+              secret: "{{ ocp4_etx_app_platform_rhbk_client_tpacli_secret }}"
           users:
             password: "{{ ocp4_etx_app_platform_rhbk_user_password }}"
 

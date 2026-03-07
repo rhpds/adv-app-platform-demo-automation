@@ -220,6 +220,11 @@ ocp4_etx_app_platform_rhbk_client_backstage_plugin_secret:
 
 ocp4_etx_app_platform_rhbk_user_password: "{{ common_password }}"
 
+ocp4_etx_app_platform_rhbk_client_tpacli_secret:
+  "{{ lookup('ansible.builtin.password', '/tmp/passwordfile-client-tpacli', chars=['ascii_letters', 'digits'], length=32) }}"
+
+
+
 # ------------------------------------------------
 # Quay
 # ------------------------------------------------
