@@ -37,6 +37,13 @@ spec:
         argocd:
           namespace: openshift-gitops
 
+        catalogSource:
+          enabled: {{ ocp4_etx_app_platform_catalog_source_enabled }}
+          name: {{ ocp4_etx_app_platform_catalog_source_name }}
+          namespace: {{ ocp4_etx_app_platform_catalog_source_namespace }}
+          image: {{ ocp4_etx_app_platform_catalog_source_image }}
+          tag: {{ ocp4_etx_app_platform_catalog_source_tag }}
+
         cluster:
           subdomain: {{ r_openshift_subdomain }}
           apiServer: {{ r_openshift_api_server }}
