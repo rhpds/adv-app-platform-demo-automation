@@ -81,8 +81,5 @@
 - name: Install Showroom
   ansible.builtin.include_tasks: showroom.yml
 
-- name: Install Terminal
-  ansible.builtin.include_tasks: terminal.yml
-
 - name: Wait for all ArgoCD Applications to sync
   ansible.builtin.include_tasks: wait_for_apps.yml

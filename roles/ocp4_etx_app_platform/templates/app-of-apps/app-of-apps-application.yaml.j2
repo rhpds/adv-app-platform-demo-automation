@@ -29,6 +29,8 @@ spec:
     targetRevision: {{ ocp4_etx_app_platform_gitops_repo_tag }}
     path: app-of-apps
     helm:
+      # Values passed here configure all demo platform services deployed
+      # by the app-of-apps Helm chart (GitOps, Keycloak, Quay, RHDH, etc.)
       valuesObject:
         gitops:
           repoURL: {{ ocp4_etx_app_platform_gitops_repo }}
@@ -37,6 +39,12 @@ spec:
         argocd:
           namespace: openshift-gitops
 
+        # Pin operator versions using a frozen OLM catalog snapshot.
+        # When enabled, a custom CatalogSource is deployed and all operator
+        # subscriptions use it instead of the live catalog that can change
+        # frequently. This is important for repeatable deployments, especially
+        # because we auto approve operator install plans so new versions can
+        # be installed without our testing on new deployments.
         catalogSource:
           enabled: {{ ocp4_etx_app_platform_catalog_source_enabled }}
           name: {{ ocp4_etx_app_platform_catalog_source_name }}
