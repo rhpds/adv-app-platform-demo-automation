@@ -81,5 +81,11 @@
 - name: Install Showroom
   ansible.builtin.include_tasks: showroom.yml
 
+- name: Install Terminal
+  # This is enabled by default, but should be disabled for our 1.0.1
+  # Helm Charts release, because it installs using GitOps instead
+  when: ocp4_etx_app_platform_terminal_install | bool
+  ansible.builtin.include_tasks: terminal.yml
+
 - name: Wait for all ArgoCD Applications to sync
   ansible.builtin.include_tasks: wait_for_apps.yml
